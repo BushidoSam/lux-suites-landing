@@ -14,7 +14,7 @@ export default function Hero() {
           unoptimized
         />
         {/* Dark overlay with navy tint */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1E3F]/80 via-[#0B1E3F]/60 to-[#0B1E3F]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1E3F]/65 via-[#0B1E3F]/30 to-[#0B1E3F]/75" />
       </div>
 
       {/* Content */}

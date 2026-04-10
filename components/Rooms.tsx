@@ -84,13 +84,13 @@ export default function Rooms() {
               }`}
             >
               {room.featured && (
-                <div className="absolute top-4 left-0 z-10 bg-[#C9A84C] text-[#0B1E3F] text-xs font-bold px-4 py-1.5 tracking-widest uppercase">
+                <div className="absolute top-4 left-0 z-10 bg-[#C9A84C] text-[#0B1E3F] text-xs font-bold px-4 py-1.5 tracking-widest uppercase rounded-r-sm">
                   Most Popular
                 </div>
               )}
 
               {/* Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <Image
                   src={room.image}
                   alt={room.name}
@@ -98,12 +98,6 @@ export default function Rooms() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   unoptimized
                 />
-                <div className="absolute bottom-0 right-0 bg-[#0B1E3F] text-white px-4 py-2">
-                  <span className="text-[#C9A84C] font-serif font-bold text-xl">
-                    ${room.price}
-                  </span>
-                  <span className="text-white/60 text-xs"> / night</span>
-                </div>
               </div>
 
               {/* Content */}
@@ -112,7 +106,13 @@ export default function Rooms() {
                   <h3 className="font-serif text-xl font-bold text-[#0B1E3F]">
                     {room.name}
                   </h3>
-                  <span className="text-gray-400 text-sm shrink-0 ml-2">{room.size}</span>
+                  <div className="text-right shrink-0 ml-2">
+                    <div>
+                      <span className="text-[#C9A84C] font-serif font-bold text-lg">${room.price}</span>
+                      <span className="text-gray-400 text-xs"> /night</span>
+                    </div>
+                    <div className="text-gray-400 text-xs">{room.size}</div>
+                  </div>
                 </div>
                 <p className="text-gray-500 text-sm mb-4 leading-relaxed">
                   {room.description}
@@ -132,7 +132,7 @@ export default function Rooms() {
 
                 <a
                   href="#contact"
-                  className="block w-full text-center bg-[#0B1E3F] hover:bg-[#152847] text-white text-xs font-semibold tracking-[0.2em] uppercase py-3 transition-colors duration-200"
+                  className="block w-full text-center bg-[#C9A84C] hover:bg-[#A8863A] text-[#0B1E3F] text-xs font-bold tracking-[0.2em] uppercase py-3 transition-colors duration-200"
                 >
                   Book This Room
                 </a>

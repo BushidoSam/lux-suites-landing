@@ -1,40 +1,46 @@
+function AttractionIcon({ type }: { type: string }) {
+  const cls = "w-5 h-5";
+  if (type === "landmark") return (
+    <svg className={cls} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18" />
+    </svg>
+  );
+  if (type === "waves") return (
+    <svg className={cls} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12c1.5 0 1.5-1.5 3-1.5s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 7c1.5 0 1.5-1.5 3-1.5s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 17c1.5 0 1.5-1.5 3-1.5s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5" />
+    </svg>
+  );
+  if (type === "airplane") return (
+    <svg className={cls} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+    </svg>
+  );
+  if (type === "shopping") return (
+    <svg className={cls} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+    </svg>
+  );
+  if (type === "theater") return (
+    <svg className={cls} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+    </svg>
+  );
+  return (
+    <svg className={cls} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-4.97-4.03-9-9-9zm0 0c0 4.97 4.03 9 9 9" />
+    </svg>
+  );
+}
+
 const attractions = [
-  {
-    icon: "🏛️",
-    name: "Historic City Center",
-    distance: "0.3 km",
-    description: "Walking distance to museums, galleries, and heritage sites.",
-  },
-  {
-    icon: "🌊",
-    name: "Waterfront Promenade",
-    distance: "0.5 km",
-    description: "Stroll along the scenic harbor with restaurants and shops.",
-  },
-  {
-    icon: "✈️",
-    name: "International Airport",
-    distance: "12 km",
-    description: "25 minutes by express shuttle — complimentary for guests.",
-  },
-  {
-    icon: "🛍️",
-    name: "Luxury Shopping District",
-    distance: "0.8 km",
-    description: "World-class brands, boutiques, and fine dining nearby.",
-  },
-  {
-    icon: "🎭",
-    name: "Opera & Arts Quarter",
-    distance: "1.2 km",
-    description: "Premier theatres, concert halls, and cultural venues.",
-  },
-  {
-    icon: "🌿",
-    name: "Royal Botanical Garden",
-    distance: "1.5 km",
-    description: "50 acres of manicured gardens — perfect for morning walks.",
-  },
+  { iconType: "landmark", name: "Historic City Center", distance: "0.3 km", description: "Walking distance to museums, galleries, and heritage sites." },
+  { iconType: "waves", name: "Waterfront Promenade", distance: "0.5 km", description: "Stroll along the scenic harbor with restaurants and shops." },
+  { iconType: "airplane", name: "International Airport", distance: "12 km", description: "25 minutes by express shuttle — complimentary for guests." },
+  { iconType: "shopping", name: "Luxury Shopping District", distance: "0.8 km", description: "World-class brands, boutiques, and fine dining nearby." },
+  { iconType: "theater", name: "Opera & Arts Quarter", distance: "1.2 km", description: "Premier theatres, concert halls, and cultural venues." },
+  { iconType: "leaf", name: "Royal Botanical Garden", distance: "1.5 km", description: "50 acres of manicured gardens — perfect for morning walks." },
 ];
 
 const transport = [
@@ -75,7 +81,7 @@ export default function Location() {
               <img
                 src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=600&fit=crop&q=80"
                 alt="Hotel location aerial view"
-                className="w-full h-full object-cover opacity-60"
+                className="w-full h-full object-cover opacity-80"
               />
               {/* Location pin overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -133,7 +139,9 @@ export default function Location() {
                   key={a.name}
                   className="flex items-start gap-4 p-4 border border-[#0B1E3F]/10 hover:border-[#C9A84C] transition-colors duration-200 group"
                 >
-                  <div className="text-3xl shrink-0">{a.icon}</div>
+                  <div className="w-10 h-10 bg-[#F9F6F0] border border-[#C9A84C]/30 flex items-center justify-center shrink-0 text-[#C9A84C]">
+                    <AttractionIcon type={a.iconType} />
+                  </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2 mb-1">
                       <h4 className="font-semibold text-[#0B1E3F] text-sm">{a.name}</h4>

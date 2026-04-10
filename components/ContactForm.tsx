@@ -106,7 +106,7 @@ export default function ContactForm() {
                       type="text"
                       required
                       placeholder="John"
-                      className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors text-gray-900 placeholder-gray-400"
+                      className="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20 transition-colors text-gray-900 placeholder-gray-400"
                     />
                   </div>
                   <div>
@@ -117,7 +117,7 @@ export default function ContactForm() {
                       type="text"
                       required
                       placeholder="Smith"
-                      className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors text-gray-900 placeholder-gray-400"
+                      className="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20 transition-colors text-gray-900 placeholder-gray-400"
                     />
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function ContactForm() {
                     type="email"
                     required
                     placeholder="john@example.com"
-                    className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors text-gray-900 placeholder-gray-400"
+                    className="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20 transition-colors text-gray-900 placeholder-gray-400"
                   />
                 </div>
 
@@ -141,7 +141,7 @@ export default function ContactForm() {
                   <input
                     type="tel"
                     placeholder="+1 (555) 000-0000"
-                    className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors text-gray-900 placeholder-gray-400"
+                    className="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20 transition-colors text-gray-900 placeholder-gray-400"
                   />
                 </div>
 
@@ -153,7 +153,7 @@ export default function ContactForm() {
                     <input
                       type="date"
                       required
-                      className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors text-gray-900"
+                      className="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20 transition-colors text-gray-900"
                     />
                   </div>
                   <div>
@@ -163,7 +163,7 @@ export default function ContactForm() {
                     <input
                       type="date"
                       required
-                      className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors text-gray-900"
+                      className="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20 transition-colors text-gray-900"
                     />
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export default function ContactForm() {
                   <label className="block text-xs font-medium text-gray-500 tracking-wider uppercase mb-2">
                     Room Preference
                   </label>
-                  <select className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors text-gray-900 bg-white">
+                  <select className="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20 transition-colors text-gray-900 bg-white">
                     <option value="">Select a room type...</option>
                     <option>Classic Double — from $220/night</option>
                     <option>Signature Twin — from $290/night</option>
@@ -190,7 +190,7 @@ export default function ContactForm() {
                   <textarea
                     rows={3}
                     placeholder="Dietary requirements, celebrations, accessibility needs..."
-                    className="w-full border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] transition-colors text-gray-900 placeholder-gray-400 resize-none"
+                    className="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20 transition-colors text-gray-900 placeholder-gray-400 resize-none"
                   />
                 </div>
 

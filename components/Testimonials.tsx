@@ -120,7 +120,7 @@ export default function Testimonials() {
               className="bg-white/5 border border-white/10 p-8 hover:border-[#C9A84C]/40 transition-colors duration-300"
             >
               {/* Quote mark */}
-              <div className="font-serif text-6xl text-[#C9A84C]/30 leading-none mb-4">&ldquo;</div>
+              <div className="font-serif text-6xl text-[#C9A84C]/50 leading-none mb-4">&ldquo;</div>
 
               <p className="text-white/80 text-sm leading-relaxed mb-6">{t.review}</p>
 
@@ -130,11 +130,11 @@ export default function Testimonials() {
                   <img
                     src={t.avatar}
                     alt={t.name}
-                    className="w-11 h-11 rounded-full object-cover border-2 border-[#C9A84C]/40"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-[#C9A84C]/40"
                   />
                   <div>
                     <p className="text-white font-semibold text-sm">{t.name}</p>
-                    <p className="text-white/40 text-xs">{t.role}</p>
+                    <p className="text-white/60 text-xs">{t.role}</p>
                   </div>
                 </div>
                 <div className="text-right">

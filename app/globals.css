@@ -1,13 +1,38 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
 :root {
-  --navy: #0B1E3F;
-  --navy-light: #152847;
-  --navy-dark: #071629;
-  --gold: #C9A84C;
-  --gold-light: #DFC070;
-  --gold-dark: #A8863A;
-  --cream: #F9F6F0;
+  /* Primary */
+  --ls-gold: #C9A84C;
+  --ls-navy: #0D1B2A;
+  --ls-ivory: #F7F3ED;
+
+  /* Secondary & Accent */
+  --ls-gold-dark: #A8863A;
+  --ls-gold-pale: #E8D5A3;
+  --ls-navy-deep: #070F1A;
+  --ls-navy-slate: #1E3248;
+
+  /* Surface */
+  --ls-ivory-light: #FDFAF6;
+  --ls-stone: #EDE6DB;
+  --ls-overlay: hsla(13, 18%, 5%, 0.75);
+
+  /* Neutrals & Text */
+  --ls-charcoal: #1C1C1C;
+  --ls-gray: #6B6460;
+  --ls-taupe: #9E9690;
+  --ls-mist: #C5BEB8;
+  --ls-border: #D9D0C8;
+
+  /* Semantic */
+  --ls-success: #2D6A4F;
+  --ls-alert: #C97A1A;
+  --ls-error: #B04040;
 }
 
 * {
@@ -21,11 +46,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #1a1a1a;
-}
-
-.font-serif {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background: #F7F3ED;
+  color: #1C1C1C;
 }

@@ -3,75 +3,66 @@ import Image from "next/image";
 const rooms = [
   {
     name: "Deluxe King Room",
-    description: "Spacious elegance with city views, a plush king bed, and premium bath amenities.",
+    features: ["King Bed", "City View", "Rainfall Shower", "Minibar"],
     image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop&q=80",
     price: 350,
-    amenities: ["King Bed", "City View", "Rainfall Shower", "Free WiFi", "Minibar"],
     size: "42 m²",
   },
   {
     name: "Premier Suite",
-    description: "A sanctuary of indulgence with a separate living area, panoramic views, and butler service.",
+    features: ["King Bed", "Living Room", "Panoramic View", "Butler Service"],
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop&q=80",
     price: 680,
-    amenities: ["King Bed", "Living Room", "Panoramic View", "Butler Service", "Jacuzzi"],
     size: "78 m²",
-    featured: true,
   },
   {
     name: "Royal Penthouse",
-    description: "The pinnacle of luxury — a private rooftop terrace, dining room, and exclusive concierge.",
+    features: ["2 King Beds", "Rooftop Terrace", "Private Dining", "Spa Access"],
     image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop&q=80",
     price: 1200,
-    amenities: ["2 King Beds", "Rooftop Terrace", "Private Dining", "Concierge", "Spa Access"],
     size: "150 m²",
   },
   {
     name: "Signature Twin",
-    description: "Perfect for business travelers — dual workstations, twin beds, and high-speed connectivity.",
+    features: ["Twin Beds", "Workstation", "Lounge Chair", "Smart TV"],
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop&q=80",
     price: 290,
-    amenities: ["Twin Beds", "Workstation", "Lounge Chair", "Smart TV", "Express Laundry"],
     size: "38 m²",
   },
   {
     name: "Junior Ocean Suite",
-    description: "Wake up to stunning waterfront vistas from your private balcony with morning coffee service.",
+    features: ["King Bed", "Ocean View", "Private Balcony", "Soaking Tub"],
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop&q=80",
     price: 520,
-    amenities: ["King Bed", "Ocean View", "Private Balcony", "Espresso Machine", "Soaking Tub"],
     size: "56 m²",
   },
   {
     name: "Classic Double",
-    description: "Timeless comfort and classic Lux Suites hospitality at an exceptional value.",
+    features: ["Double Bed", "Garden View", "Rain Shower", "Safe"],
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&h=600&fit=crop&q=80",
     price: 220,
-    amenities: ["Double Bed", "Garden View", "Rain Shower", "Smart TV", "Safe"],
     size: "30 m²",
   },
 ];
 
 export default function Rooms() {
   return (
-    <section id="rooms" className="py-24 bg-[#F9F6F0]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="rooms" style={{ background: "#F7F3ED", padding: "96px 0" }}>
+      <div className="max-w-[1400px] mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-[#C9A84C]" />
-            <span className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase font-medium">
-              Accommodation
-            </span>
-            <div className="h-px w-12 bg-[#C9A84C]" />
-          </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#0B1E3F] mb-4">
-            Our Rooms & Suites
-          </h2>
-          <p className="text-gray-600 max-w-xl mx-auto text-lg">
-            Each space is a masterpiece of comfort, designed to provide an
-            unforgettable stay.
+        <div className="mb-16">
+          <p
+            className="text-[#C9A84C] uppercase mb-4"
+            style={{ fontSize: 11, fontWeight: 500, letterSpacing: "1.5px" }}
+          >
+            Accommodations
           </p>
+          <h2
+            className="font-serif text-[#0D1B2A]"
+            style={{ fontSize: 48, fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.25px" }}
+          >
+            Rooms &amp; Suites
+          </h2>
         </div>
 
         {/* Rooms grid */}
@@ -79,62 +70,83 @@ export default function Rooms() {
           {rooms.map((room) => (
             <div
               key={room.name}
-              className={`group bg-white overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 relative ${
-                room.featured ? "ring-2 ring-[#C9A84C]" : ""
-              }`}
+              className="group bg-[#FDFAF6] overflow-hidden transition-all duration-300"
+              style={{ border: "1px solid transparent" }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = "#D9D0C8";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = "transparent";
+              }}
             >
-              {room.featured && (
-                <div className="absolute top-4 left-0 z-10 bg-[#C9A84C] text-[#0B1E3F] text-xs font-bold px-4 py-1.5 tracking-widest uppercase rounded-r-sm">
-                  Most Popular
-                </div>
-              )}
-
-              {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              {/* 4:3 image */}
+              <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
                 <Image
                   src={room.image}
                   alt={room.name}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover"
+                  style={{ borderRadius: 0 }}
                   unoptimized
                 />
               </div>
 
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="font-serif text-xl font-bold text-[#0B1E3F]">
+              {/* Card content */}
+              <div style={{ padding: "24px 24px 28px" }}>
+                <div className="flex items-start justify-between mb-3">
+                  <h3
+                    className="font-serif text-[#0D1B2A]"
+                    style={{ fontSize: 22, fontWeight: 500, lineHeight: 1.25 }}
+                  >
                     {room.name}
                   </h3>
-                  <div className="text-right shrink-0 ml-2">
-                    <div>
-                      <span className="text-[#C9A84C] font-serif font-bold text-lg">${room.price}</span>
-                      <span className="text-gray-400 text-xs"> /night</span>
-                    </div>
-                    <div className="text-gray-400 text-xs">{room.size}</div>
-                  </div>
+                  <span
+                    className="text-[#9E9690] shrink-0 ml-3"
+                    style={{ fontSize: 13, fontWeight: 400 }}
+                  >
+                    {room.size}
+                  </span>
                 </div>
-                <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-                  {room.description}
+
+                {/* Rate */}
+                <p
+                  className="font-serif text-[#0D1B2A] mb-4"
+                  style={{ fontSize: 22, fontWeight: 500 }}
+                >
+                  From ${room.price}
+                  <span
+                    className="text-[#6B6460]"
+                    style={{ fontSize: 13, fontWeight: 400 }}
+                  >
+                    {" "}/ night
+                  </span>
                 </p>
 
-                {/* Amenities */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {room.amenities.map((amenity) => (
-                    <span
-                      key={amenity}
-                      className="text-xs bg-[#F9F6F0] text-[#0B1E3F] px-3 py-1 border border-[#0B1E3F]/10"
+                {/* Features */}
+                <ul className="mb-6 space-y-1">
+                  {room.features.map((f) => (
+                    <li
+                      key={f}
+                      className="text-[#6B6460]"
+                      style={{ fontSize: 13, fontWeight: 400 }}
                     >
-                      {amenity}
-                    </span>
+                      {f}
+                    </li>
                   ))}
-                </div>
+                </ul>
 
                 <a
                   href="#contact"
-                  className="block w-full text-center bg-[#C9A84C] hover:bg-[#A8863A] text-[#0B1E3F] text-xs font-bold tracking-[0.2em] uppercase py-3 transition-colors duration-200"
+                  className="block text-center bg-[#C9A84C] hover:bg-[#A8863A] text-[#0D1B2A] transition-colors duration-200"
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 500,
+                    letterSpacing: "0.8px",
+                    padding: "14px 28px",
+                    borderRadius: 2,
+                  }}
                 >
-                  Book This Room
+                  Reserve
                 </a>
               </div>
             </div>
